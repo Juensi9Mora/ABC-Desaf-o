@@ -1,0 +1,90 @@
+/* Paleta "baby": durazno, crema, salvia, caramelo y arena */
+:root {
+  --peach: #f7c1a7;
+  --cream: #fffdf2;
+  --sage: #c1cca4;
+  --caramel: #dab07d;
+  --sand: #f7dbb1;
+  --ink: #5a4632; /* marrón oscuro para buen contraste del texto */
+}
+
+body {
+  font-family: "Nunito", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  color: var(--ink);
+  background: var(--cream) url("../assets/bg.jpg") center top / cover fixed no-repeat;
+}
+
+.navbar-baby { background-color: var(--sage); }
+.navbar-baby .navbar-brand { color: var(--ink); }
+.title-baby { color: var(--ink); text-shadow: 0 2px 0 var(--sand); }
+
+.btn-baby {
+  background-color: var(--peach);
+  border-color: var(--peach);
+  color: var(--ink);
+  font-weight: 700;
+}
+.btn-baby:hover { background-color: var(--caramel); border-color: var(--caramel); color: var(--ink); }
+
+/* ---------- Tarjetas con efecto volteo ---------- */
+.letter-card {
+  perspective: 1000px;
+  cursor: pointer;
+  aspect-ratio: 3 / 4;
+  background: transparent !important;
+  border: none !important;
+  border-radius: 14px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.letter-card:hover,
+.letter-card:focus-visible {
+  transform: translateY(-4px);
+  box-shadow: 0 0.5rem 1rem rgba(90, 70, 50, 0.25) !important;
+  outline: 3px solid var(--caramel);
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s ease-in-out;
+  transform-style: preserve-3d;
+}
+.letter-card.flipped .card-inner { transform: rotateY(180deg); }
+
+.card-frontal,
+.card-lateral {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  border-radius: 14px;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.card-frontal { background-color: var(--cream); border: 3px solid var(--peach); }
+.card-lateral { background-color: var(--sand); border: 3px solid var(--sage); transform: rotateY(180deg); }
+
+.card-frontal img,
+.card-lateral img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: 10px;
+}
+
+/* Marca de letras ya vistas */
+.letter-card.seen .card-frontal { border-color: var(--sage); }
+
+/* ---------- Equipo ---------- */
+.footer-baby { background-color: var(--sand); border-top: 4px solid var(--caramel); }
+#seccion-equipo .card {
+  background-color: var(--cream);
+  border-color: var(--peach) !important;
+  transition: transform 0.2s ease;
+}
+#seccion-equipo .card:hover { transform: translateY(-2px); }
+.badge-baby { background-color: var(--sage); color: var(--ink); }
+.cursor-pointer { cursor: pointer; }

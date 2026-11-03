@@ -1,0 +1,42 @@
+﻿<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Abecedario Interactivo</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="styles/index.css" />
+  </head>
+
+  <body class="min-vh-100 d-flex flex-column">
+    <nav class="navbar navbar-expand-lg sticky-top shadow-sm navbar-baby">
+      <div class="container">
+        <a class="navbar-brand fw-bold" href="assets/bg.jpg">🐻 Abecedario Interactivo</a>
+      </div>
+    </nav>
+
+    <header class="container text-center my-4">
+      <h1 class="display-5 fw-bold title-baby">¡Aprendamos el abecedario!</h1>
+      <p class="lead mb-0">
+        Toca una letra para ver su letra y vuelve a tocarla para regresar.
+      </p>
+    </header>
+
+    <main class="container pb-5 flex-grow-1">
+      <alphabet-component></alphabet-component>
+    </main>
+
+    <footer-component></footer-component>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script defer src="components/letter-component.js"></script>
+    <script defer src="components/alphabet-component.js"></script>
+    <script defer src="components/footer-component.js"></script>
+    <script defer src="script.js"></script>
+  </body>
+</html>
